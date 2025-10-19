@@ -3,9 +3,10 @@ import sqlite3
 from datetime import datetime
 
 # ضع هنا توكن البوت الخاص بك
-BOT_TOKEN = "8295880590:AAFB635wZtQ82UDYLiUiIYnSkrfS69w0ZnY"
-
+import os
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(BOT_TOKEN)
+
 
 # مسار قاعدة البيانات الثابت
 DB_PATH = "bot_data.db"
@@ -77,3 +78,4 @@ def handle_message(message):
 
 print("✅ البوت يعمل الآن...")
 bot.polling(none_stop=True)
+
